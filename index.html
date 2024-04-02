@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <input type="text" id="userInput">
+    <button onclick="saveText()">Gravar</button>
+    <p id="display"></p>
+    <br>
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <br>
+    <button onclick="remove()">-</button>
+
+    <script>
+       
+        
+      function saveText() {
+            var userInput = document.getElementById("userInput").value;
+            var display = document.getElementById("display")
+            display.textContent = userInput;
+        }
+
+        function remove() {
+            var userInput = document.getElementById("userInput");
+            var inputText = userInput.value; // Obtenha o valor digitado pelo usuário
+            var newText = inputText.slice(0, -1); // Remova a última letra
+            userInput.value = newText; // Atualize o valor no input
+        }
+        
+        $(document).ready(function () {
+            $("#red").click(function () {
+                $("p").css("color", "red");
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#green").click(function () {
+                $("p").css("color", "green");
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#blue").click(function () {
+                $("p").css("color", "blue");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
